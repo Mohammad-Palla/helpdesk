@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Let's get started!</h1>
+    {% if current_user.is_authenticated %}
+        Hi {{ current_user.email }}!
+        <a href="{{ url_for('dashboard') }}">Open Dashboard</a>
+    {% else %}
+         <a href="{{ url_for('login') }}">Login now</a>
+    {% endif %}
+
+{% endblock %}
